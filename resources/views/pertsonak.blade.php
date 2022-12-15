@@ -34,8 +34,11 @@
     </br>
     </br>
     @foreach ($pertso as $per)
+      <a>Izen Abizenak---><a>
       <a>{{$per -> izena}}</a>
       <a>{{$per -> abizena}}</a>
+      </br>
+      <a>Etxea---></a>
       <form action="{{route('pertsonaezabatu', [$per -> id])}}" method="POST">
         @method('DELETE')
         @csrf
