@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("izena");
             $table->string("abizena");
+            $table->foreignId('etxea_id')->constrained();
             $table->timestamps();
         });
     }

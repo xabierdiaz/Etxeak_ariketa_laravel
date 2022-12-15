@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class pertsona extends Model
 {
     use HasFactory;
+
+    public function etxea() {
+        return $this->belongsTo(etxea::class, 'etxea_id');
+    }
 }

@@ -23,5 +23,7 @@
     <body align="center" class="antialiased">
             <h1>Etxeak.</h1>
             <a href="/pertsonak">pertsonak kudeatu</a>
+            </br>
+            <a href="/etxeak">etxeak kudeatu</a>
     </body>
 </html>

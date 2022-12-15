@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\pertsona;
+use App\Models\etxea;
 
 class PertsonaController extends Controller
 {
@@ -17,6 +18,7 @@ class PertsonaController extends Controller
         $per = new pertsona;
         $per->izena = $request->izena;
         $per->abizena = $request->abizena;
+        $per->etxea_id = $request->etxea;
         $per->save();
     
         return redirect('/pertsonak');
@@ -25,7 +27,10 @@ class PertsonaController extends Controller
     
     public function show_pertsona(){
         $pertso = pertsona::all();
-        return view('pertsonak', ['pertso' => $pertso]);
+        $etxe = etxea::all();
+        return view('pertsonak', ['pertso' => $pertso, 'etxe' => $etxe]);
+  
+        //return view('etxeak', ['etxe' => $etxe]);
     }
 
     

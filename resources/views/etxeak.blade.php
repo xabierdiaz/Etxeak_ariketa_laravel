@@ -17,35 +17,24 @@
       @endif
 
       <!--insert-->
-        <form action=" {{ route('pertsonasartu') }} " method="POST">
+        <form action=" {{ route('etxeasartu') }} " method="POST">
             @csrf
              <div class="mb-4">
-                <label class="form-label">Pertsonaren Izena</label>
+                <label class="form-label">Etxearen Izena</label>
                 <input type="text" class="form-control" name="izena">
                 </br>
-                <label class="form-label">Pertsonaren Abizena</label>
-                <input type="text" class="form-control" name="abizena">
             </div>
-
-            <select name="etxea" class="form-select">
-                @foreach ($etxe as $et)
-                <option value="{{ $et->id }}" >{{ $et->id }} {{ $et -> izena }}</option>
-                @endforeach
-            </select>
-          <button type="submit" class="btn btn-primary">Pertsona Sartu</button>
+          <button type="submit" class="btn btn-primary">Etxea Sartu</button>
         </form>
 
     <!--view and delete-->
     </br>
     </br>
     </br>
-    @foreach ($pertso as $per)
+    @foreach ($etxe as $et)
       <a>Izen Abizenak---><a>
-      <a>{{$per -> izena}}</a>
-      <a>{{$per -> abizena}}</a>
-      </br>
-      <a>Etxea---></a>
-      <form action="{{route('pertsonaezabatu', [$per -> id])}}" method="POST">
+      <a>{{$et -> izena}}</a>
+      <form action="{{route('etxeaezabatu', [$et -> id])}}" method="POST">
         @method('DELETE')
         @csrf
         <button>Ezabatu</button>
