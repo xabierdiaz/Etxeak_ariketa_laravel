@@ -29,7 +29,7 @@
 
             <select name="etxea" class="form-select">
                 @foreach ($etxe as $et)
-                <option value="{{ $et->id }}" >{{ $et->id }} {{ $et -> izena }}</option>
+                <option value="{{ $et->id }}" >{{ $et -> izena }}</option>
                 @endforeach
             </select>
           <button type="submit" class="btn btn-primary">Pertsona Sartu</button>
@@ -40,11 +40,8 @@
     </br>
     </br>
     @foreach ($pertso as $per)
-      <a>Izen Abizenak---><a>
-      <a>{{$per -> izena}}</a>
-      <a>{{$per -> abizena}}</a>
-      </br>
-      <a>Etxea---></a>
+      <p>Izen abizenak: &nbsp;   {{$per -> izena}} {{$per -> abizena}}</p> <!--&nbsp; esto es un espacio en blanco-->
+      <p>Etxebizitza: &nbsp; {{$per -> etxea -> izena}}</p>
       <form action="{{route('pertsonaezabatu', [$per -> id])}}" method="POST">
         @method('DELETE')
         @csrf
