@@ -30,6 +30,9 @@
         </form>
 
     <!--view and delete-->
+    </br>
+    </br>
+    </br>
     @foreach ($pertso as $per)
       <a>{{$per -> izena}}</a>
       <a>{{$per -> abizena}}</a>
