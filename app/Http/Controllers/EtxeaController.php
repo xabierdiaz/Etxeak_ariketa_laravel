@@ -33,11 +33,15 @@ class EtxeaController extends Controller
         return redirect('/etxeak');
     }
 
-/*
-    public function editshow($id){
-        $etxe = Etxea::find($id);   
-        $etxedanak = Etxea::all();
-        return view('etxeaedit', ['etxe' => $etxe, 'etxedanak' => $etxedanak]);
+    public function aldatuetxea($id){
+        $etxe = etxea::find($id);
+        return view('etxeakeditatu', ['etxe' => $etxe]);
     }
-    */
+
+    public function aldatuetxeadb(Request $request, $id){
+        $etxe = etxea::find($id);
+        $etxe->izena = $request->izena;
+        $etxe->save();
+        return redirect('/etxeak');
+    }
 }

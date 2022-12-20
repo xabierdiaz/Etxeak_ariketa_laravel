@@ -39,7 +39,8 @@
         @csrf
         <button>Ezabatu</button>
       </form>
-        <a href="">editatu</a>
+      <!--edit link-->
+        <a href="{{ route('etxeak-aldatu', ['id' => $et->id]) }}">editatu</a>
       </form>
       <br/><br/><br/>
     @endforeach
