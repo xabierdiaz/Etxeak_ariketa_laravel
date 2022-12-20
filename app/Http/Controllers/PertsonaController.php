@@ -33,18 +33,24 @@ class PertsonaController extends Controller
         //return view('etxeak', ['etxe' => $etxe]);
     }
 
-    
     public function delete_pertsona($id){
         $perts = pertsona::find($id);
         $perts->delete();
         return redirect('/pertsonak');
     }
 
-/*
-    public function editshow($id){
-        $etxe = Etxea::find($id);   
-        $etxedanak = Etxea::all();
-        return view('etxeaedit', ['etxe' => $etxe, 'etxedanak' => $etxedanak]);
+    public function aldatupertsona($id){
+        $per = pertsona::find($id);
+        $etxe = etxea::all();
+        return view('pertsonakeditatu', ['per' => $per, 'etxe' => $etxe]);
     }
-    */
+
+    public function aldatupertsonadb(Request $request, $id){
+        $per = pertsona::find($id);
+        
+        $per->izena = $request->izena;
+        $per->etxea_id = $request->etxe;
+        $per->save();
+        return redirect('/pertsonak');
+    }
 }

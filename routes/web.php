@@ -18,6 +18,9 @@ Route::get('/pertsonak', [PertsonaController::class, 'show_pertsona']);
 
 Route::delete('/pertsonak/{id}', [PertsonaController::class, 'delete_pertsona'])->name('pertsonaezabatu');
 
+Route::get('/pertsonak/{id}', [PertsonaController::class , 'aldatupertsona'])->name('pertsonak-aldatu');
+
+Route::patch('/pertsonak/{id}', [PertsonaController::class , 'aldatupertsonadb'])->name('pertsona-aldatu-db');
 
 
 
