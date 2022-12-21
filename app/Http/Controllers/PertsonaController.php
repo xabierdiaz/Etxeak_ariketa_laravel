@@ -49,7 +49,8 @@ class PertsonaController extends Controller
         $per = pertsona::find($id);
         
         $per->izena = $request->izena;
-        $per->etxea_id = $request->etxe;
+        $per->abizena = $request->abizena;
+        $per->etxea_id = $request->etxea_idea;
         $per->save();
         return redirect('/pertsonak');
     }

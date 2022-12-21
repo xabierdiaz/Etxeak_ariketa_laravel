@@ -10,13 +10,14 @@
 
             <div class="mb-3 col">
                 <input type="text" class="form-control" name="izena" placeholder="Izena" value="{{ $per->izena }}">
-                <input type="text" class="form-control" name="izena" placeholder="Izena" value="{{ $per->abizena }}">
-                <select name="egilea" class="form-select mb-3">
+                <input type="text" class="form-control" name="abizena" placeholder="Abizena" value="{{ $per->abizena }}">
+
+                <select class="form-select" name="etxea_idea">
                 @foreach ($etxe as $et)
-                <option value="{{ $et->id }}" {{$per -> et->id == $egile->id ? 'selected' : ''}}>{{ $et->id }} {{ $et -> izena }}}
-                </option>
+                <option value="{{ $et->id }}" > {{ $et -> izena }} </option>
                 @endforeach
-            </select>
+                </select>
+                
                 <button type="submit" class="btn btn-primary">pertsona aldatu</button>
             </div>
         </form>
